@@ -1,5 +1,5 @@
 import Vue from 'vue'
-
+import htmlToPdf from './htmlToPdf'
 // 引入echarts
 import * as echarts from 'echarts' // 在import的后面，echarts的前面加一个 * as
 
@@ -50,6 +50,8 @@ Vue.config.productionTip = false
 
 // vue全局注入echarts
 Vue.prototype.$echarts = echarts
+
+Vue.use(htmlToPdf)
 
 new Vue({
   el: '#app',

@@ -61,7 +61,7 @@
         </el-row>
 
         <el-row class="certificate-drag-ctrl__row certificate-drag-ctrl__action">
-          <div><el-button type="success" round>预览</el-button></div>
+          <div><el-button type="success" round @click="handleClickReview">预览</el-button></div>
           <div><el-button type="primary" round @click="handleClickSave">保存</el-button></div>
         </el-row>
 
@@ -169,6 +169,11 @@ export default {
       const list = document.getElementById('list')
       list.click()
       console.log(list)
+    },
+    handleClickReview() {
+      this.$nextTick(() => {
+        this.htmlToPdf('pdfDom', '个人报告')
+      })
     }
   }
 }

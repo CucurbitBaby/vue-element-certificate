@@ -2,7 +2,7 @@
   <div class="designer-container">
     <div class="designer-container__box">
       <div
-        class="designer-container__box--size" 
+        class="designer-container__box--size pdfDom"
         :style="{
           'background-image': `url(${bgCode})`,
           'width': pdfSize.width,

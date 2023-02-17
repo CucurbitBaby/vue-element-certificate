@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <designer
+      v-if="showList"
       :bg-code="bgCode"
       :pdf-size="pdfSize"
     />
@@ -24,11 +25,20 @@ export default {
   },
   data() {
     return {
+      showList: true,
       bgCode: '',
       pdfSize: {
         width: '1123px',
         height: '794px'
       }
+    }
+  },
+  watch: {
+    'pdfSize.width': function(val) {
+      this.showList = false
+      this.$nextTick(() => {
+        this.showList = true
+      })
     }
   },
   mounted() {},
